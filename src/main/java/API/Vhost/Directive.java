@@ -11,6 +11,7 @@ import java.util.Set;
 
 public class Directive {
 
+    private int id;
     private  String name;
     private  String value;
 
@@ -18,7 +19,8 @@ public class Directive {
     public Directive() {
     }
 
-    public Directive(String name, String value) {
+    public Directive(int id, String name, String value) {
+        this.id = id;
         this.name = name;
         this.value = value;
     }
@@ -49,11 +51,14 @@ public class Directive {
         return value;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public static List<Directive> getDirectiveExample(){
         List<Directive> directives = new ArrayList<>();
-        directives.add(new Directive("AcceptFilter", "96579"));
-        directives.add(new Directive("AddDescription", "12134"));
+        directives.add(new Directive(2, "AcceptFilter", "96579"));
+        directives.add(new Directive(3, "AddDescription", "12134"));
 
         return directives;
     }

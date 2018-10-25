@@ -13,6 +13,7 @@ import java.util.Set;
 
 public class Vhost {
 
+    private int id;
     private int port;
     private String serverName;
     private String serverAlias;
@@ -21,7 +22,8 @@ public class Vhost {
     public Vhost() {
     }
 
-    public Vhost(int port, String serverName, String serverAlias, List<Directive> directives) {
+    public Vhost(int id ,int port, String serverName, String serverAlias, List<Directive> directives) {
+        this.id = id;
         this.port = port;
         this.serverName = serverName;
         this.serverAlias = serverAlias;
@@ -33,6 +35,10 @@ public class Vhost {
         List<Directive> validatedDirectives = new ArrayList<>();
 
         return validatedDirectives;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getPort() {
@@ -52,11 +58,11 @@ public class Vhost {
     }
 
 
-
     @Override
     public String toString() {
         return "Vhost{" +
-                "port=" + port +
+                "id=" + id +
+                ", port=" + port +
                 ", serverName='" + serverName + '\'' +
                 ", serverAlias='" + serverAlias + '\'' +
                 ", directives=" + directives +

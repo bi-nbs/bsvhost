@@ -8,7 +8,7 @@ public interface Backend {
 
     public List<Vhost> getAllVhosts();
 
-    public Vhost getVhostById(int id);
+    public Vhost getVhost(int id);
 
     public void addVhost(Vhost vhost);
 

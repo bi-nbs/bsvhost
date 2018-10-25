@@ -19,7 +19,7 @@ public class VhostBuilder {
 
     @RequestMapping(value = "/public/getDummyVhost", method = RequestMethod.GET)
     public Vhost getDummyVhost(){
-        Vhost host = new Vhost(80, "www.sejt.dk", "www.sejt.dk", Directive.getDirectiveExample());
+        Vhost host = new Vhost(1 ,80, "www.sejt.dk", "www.sejt.dk", Directive.getDirectiveExample());
         return  host;
     }
 
@@ -36,4 +36,8 @@ public class VhostBuilder {
         return this.db.getAllVhosts();
     }
 
+    @RequestMapping(value = "/public/getVhost", method = RequestMethod.GET)
+    public Vhost getVhost(@RequestParam("ID") int id){
+        return db.getVhost(id);
+    }
 }
